@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorate="layouts/defaultTemplate">
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="row">
+				<h2>Welcome to Ace Clothing, voted best Made in the USA clothing for 5 years in a row!</h2>
+			</div>
+		</div>
+		<div class="container" style="padding-top: 15px;">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+					  <div class="card-header">Men's Clothing</div>
+					  <div class="card-body">
+					    <img th:src="@{/images/model3.jpg}" style="width: 100%; height: 25rem;">
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+					  <div class="card-header">Women's Clothing</div>
+					  <div class="card-body">
+					    <img th:src="@{/images/model4.jpg}" style="width: 100%; height: 25rem;">
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+					  <div class="card-header">Kid's Clothing</div>
+					  <div class="card-body">
+					    <img th:src="@{/images/model2.jpg}" style="width: 100%; height: 25rem;">
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
