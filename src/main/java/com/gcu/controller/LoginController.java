@@ -1,8 +1,5 @@
 package com.gcu.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -16,7 +13,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.gcu.model.LoginModel;
-import com.gcu.model.OrderModel;
 
 @Controller
 @RequestMapping("/session")
