@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorate="layouts/defaultTemplate">
+<body>
+	<div layout:fragment="content">
+		<form action="#" th:action="@{doUpdate}" th:object="${productModel}" method="post">
+			<table>
+				<tr>
+					<td>Product ID:</td><td><input type="text" th:field="*{id}"></td><td><h5 style="color:red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">First Name Error</h5></td>
+				</tr>
+				<tr>
+					<td>Product Name:</td><td><input type="text" th:field="*{productName}"></td><td><h5 style="color:red" th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}">First Name Error</h5></td>
+				</tr>
+				<tr>
+					<td>Product Type:</td><td><input type="text" th:field="*{productType}"></td><td><h5 style="color:red" th:if="${#fields.hasErrors('productType')}" th:errors="*{productType}">Last Name Error</h5></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Update Product"/></td>
+				</tr>
+			</table>
+			<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+			<div th:each="err : ${#fields.errors('*')}">
+				<span style="color: red;" th:text="${err}" class="fieldError"></span>
+		</form>
+	</div>
+</body>
+</html>
