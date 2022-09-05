@@ -6,4 +6,6 @@ import com.gcu.data.entity.UserEntity;
 
 public interface UserRepository extends CrudRepository<UserEntity, Integer> {
 	
+	UserEntity findByEmail(String email);
+	
 }

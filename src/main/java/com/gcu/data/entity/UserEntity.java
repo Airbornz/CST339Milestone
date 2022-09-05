@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 public class UserEntity {
 	
 	@Id
+	@Column("customerID")
 	int id;
 	
 	@Column("firstName")

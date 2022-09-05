@@ -29,12 +29,12 @@
           <a class="nav-link" href="#">Cart</a>
         </li>
         
-        <li th:if="${session.containsKey('username') and session.isEmpty() == false}" class="nav-item">
-          <a class="nav-link" href="session/logout" th:text="${session.username}"></a>
+        <li sec:authorize="isFullyAuthenticated()" class="nav-item">
+          <a class="nav-link" th:href="@{/session/logout}">Logout</a>
         </li>
         
-        <li th:if="${session.isEmpty()}" class="nav-item">
-          <a class="nav-link" href="session/login">Login</a>
+        <li sec:authorize="!isFullyAuthenticated()" class="nav-item">
+          <a class="nav-link" th:href="@{/session/login}">Login</a>
         </li>
       </ul>
       <form class="d-flex">

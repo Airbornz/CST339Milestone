@@ -13,7 +13,7 @@ import com.gcu.data.entity.UserEntity;
 import com.gcu.data.repository.UserRepository;
 
 @Service
-public class UserDataService implements DataAccessInterface<UserEntity>{
+public class UserDataService implements UsersDataAccessInterface<UserEntity>, DataAccessInterface<UserEntity>{
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -102,6 +102,13 @@ public class UserDataService implements DataAccessInterface<UserEntity>{
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+
+
+	@Override
+	public UserEntity findByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 
 
