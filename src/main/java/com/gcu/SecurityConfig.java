@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.gcu.business.UserBusinessService;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
@@ -26,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.httpBasic()
 		.and()
 		.authorizeRequests()
-			.antMatchers("/", "/index.html", "/orders", "/product", "/products/**")
+			.antMatchers("/", "/index.html", "/orders", "/product", "/products/**", "/api/**")
 				.authenticated()
 				.and()
 		.authorizeRequests()
